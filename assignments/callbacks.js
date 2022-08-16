@@ -66,10 +66,13 @@ function contains(item, list, cb) {
   if(list.includes(item)) return cb(true)
   else return cb(false)
 }
-
+// console.log(contains('Gum', items, callback)) //"Gum" return true || 'gum return false'
 
 
 /* STRETCH PROBLEM */
+
+const repeat = [1,2,3,4,5,5,4,3,2]
+
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
@@ -80,5 +83,5 @@ function removeDuplicates(array, cb) {
     if(!newArr.includes(array[i])) newArr.push(array[i])
   }
   return cb(newArr)
-
 }
+// console.log(removeDuplicates(repeat, callback)) // [1,2,3,4,5]
