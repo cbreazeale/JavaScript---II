@@ -1,6 +1,6 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const e = require("express");
+// const e = require("express");
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
@@ -25,23 +25,31 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   });
 
 */
-
+function callback(anything){
+  return anything
+}
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length);
 }
+// console.log(getLength(items, callback)) // 4
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length-1]);
 }
+// console.log(last(items,callback)) // gum
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   let res = x+y;
   return cb(res);
 }
+console.log(sumNums(2,5,callback)) // 7
+
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
