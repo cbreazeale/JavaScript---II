@@ -144,7 +144,7 @@ function getCompanies(runners){
 }
 // console.log(getCompanies(runners))
 
-// Problem 3 - sort lastname by alpha and lower case it 
+// Problem 3 - sort lastname by alpha and lower case it
 function lowerName(runners){
     const lower = [];
     runners.map(el => {
@@ -152,4 +152,4 @@ function lowerName(runners){
     })
     return lower.sort()
 }
-console.log(lowerName(runners))
+// console.log(lowerName(runners))
