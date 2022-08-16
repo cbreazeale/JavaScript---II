@@ -111,7 +111,7 @@ function getTicketPrice(runners){
     ticketPriceTotal.push(total)
     return ticketPriceTotal
 }
-console.log(getTicketPrice(runners))
+// console.log(getTicketPrice(runners))
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().
@@ -122,8 +122,34 @@ console.log(getTicketPrice(runners))
 // Try to create and then solve 3 unique problems using
 // one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - find runner names w even id
+function evenNames(runners){
+    const evens = [];
+    runners.filter(el => {
+        if(el.id % 2 === 0) {
+            evens.push(el.first_name + ' ' + el.last_name)
+        }
+    })
+    return evens;
+}
+// console.log(evenNames(runners))
 
-// Problem 2
+// Problem 2 - find each runner's company
+function getCompanies(runners){
+    const companyNames = [];
+    runners.forEach(el => {
+        companyNames.push(el.company_name)
+    })
+    return companyNames
+}
+// console.log(getCompanies(runners))
 
-// Problem 3
+// Problem 3 - sort lastname by alpha and lower case it 
+function lowerName(runners){
+    const lower = [];
+    runners.map(el => {
+        lower.push(el.first_name.toLowerCase() + ' ' + el.last_name.toLowerCase())
+    })
+    return lower.sort()
+}
+console.log(lowerName(runners))
