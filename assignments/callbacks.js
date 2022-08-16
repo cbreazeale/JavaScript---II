@@ -47,7 +47,7 @@ function sumNums(x, y, cb) {
   let res = x+y;
   return cb(res);
 }
-console.log(sumNums(2,5,callback)) // 7
+// console.log(sumNums(2,5,callback)) // 7
 
 
 
@@ -56,14 +56,18 @@ function multiplyNums(x, y, cb) {
   let res = x*y;
   return cb(res);
 }
+// console.log(multiplyNums(2,5,callback)) // 10
+
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
   if(list.includes(item)) return cb(true)
   else return cb(false)
-
 }
+
+
 
 /* STRETCH PROBLEM */
 
