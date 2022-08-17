@@ -17,13 +17,15 @@ console.log(pizzaMaker('pineapple'))
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 1
-  function newCounter() {
-    return count += 1
+  function newCounter(number) {
+    if(number > 10) return count += 1
   }
-  if(count = 10) return count
+  return newCounter
 };
+let c1 = counter()
+console.log(c1(8))
+console.log(c1(11))
 
-console.log(counter())
 
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
@@ -34,4 +36,20 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0
+  return {
+    increment: function(){
+      return count += 1;
+    } ,
+    decrement: function(){
+      return count -= 1;
+    }
+  }
 };
+
+let c2 = counterFactory()
+console.log(c2.increment())
+console.log(c2.decrement())
+let c3 = counterFactory()
+console.log(c3.increment())
+console.log(c3.decrement())

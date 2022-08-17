@@ -60,12 +60,11 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 let fullName = [];
 // console.log(fullName);
 
-function getFullName(runners){
-    runners.forEach(el => {
+
+  runners.forEach(el => {
         fullName.push(el.first_name + ' ' + el.last_name)
     });
-    return fullName
-}
+
 // console.log(getFullName(runners))
 
 
@@ -74,12 +73,11 @@ function getFullName(runners){
 let allCaps = [];
 // console.log(allCaps);
 
-function getAllCaps(runners){
-    runners.map(el => {
-        allCaps.push(el.first_name.toUpperCase())
+
+   allCaps = runners.map(el => {
+       return allCaps.push(el.first_name.toUpperCase())
     })
-    return allCaps;
-}
+
 // console.log(getAllCaps(runners))
 
 
@@ -88,15 +86,12 @@ function getAllCaps(runners){
 let largeShirts = [];
 // console.log(largeShirts);
 
-function getLargeShirts(runners){
-    runners.filter(el => {
-        if(el.shirt_size == 'L'){
-             largeShirts.push(el)
-        }
+
+   largeShirts = runners.filter(el => {
+    return el.shirt_size == 'L'
     })
-    return largeShirts
-}
-// console.log(getLargeShirts(runners))
+
+console.log("LARGE SHIRTS: " , largeShirts)
 
 
 // ==== Challenge 4: Use .reduce() ====
@@ -104,14 +99,12 @@ function getLargeShirts(runners){
 let ticketPriceTotal = [];
 // console.log(ticketPriceTotal);
 
-function getTicketPrice(runners){
-    let total = runners.reduce((acc, el) => {
+
+    ticketPriceTotal = runners.reduce((acc, el) => {
         return acc + el.donation
     }, 0)
-    ticketPriceTotal.push(total)
-    return ticketPriceTotal
-}
-// console.log(getTicketPrice(runners))
+
+console.log("total: ", ticketPriceTotal)
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().
@@ -123,33 +116,30 @@ function getTicketPrice(runners){
 // one or many of the array methods listed above.
 
 // Problem 1 - find runner names w even id
-function evenNames(runners){
-    const evens = [];
-    runners.filter(el => {
-        if(el.id % 2 === 0) {
-            evens.push(el.first_name + ' ' + el.last_name)
-        }
+
+
+ const evens = runners.filter(el => {
+      return  el.id % 2 === 0
     })
-    return evens;
-}
-// console.log(evenNames(runners))
+
+
+console.log("evens : " , evens)
 
 // Problem 2 - find each runner's company
-function getCompanies(runners){
     const companyNames = [];
+
     runners.forEach(el => {
         companyNames.push(el.company_name)
     })
-    return companyNames
-}
-// console.log(getCompanies(runners))
+
+console.log("companies : " , companyNames )
 
 // Problem 3 - sort lastname by alpha and lower case it
-function lowerName(runners){
-    const lower = [];
-    runners.map(el => {
-        lower.push(el.first_name.toLowerCase() + ' ' + el.last_name.toLowerCase())
-    })
-    return lower.sort()
-}
-// console.log(lowerName(runners))
+
+
+    const lower = runners.map(el => {
+        return (el.last_name.toLowerCase())
+    }).sort()
+
+
+console.log("lower : " , lower)

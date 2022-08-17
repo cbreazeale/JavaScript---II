@@ -25,28 +25,51 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   });
 
 */
+
+
+function customForEach(arr, cb){
+  for(let i=0; i<arr.length; i++){
+   cb(arr[i])
+  }
+
+}
+customForEach(items, callback)
+
 function callback(anything){
-  return anything
+  console.log(anything)
 }
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-  return cb(arr.length);
+   cb(arr.length);
 }
-// console.log(getLength(items, callback)) // 4
+getLength(items,callback)
+
+
 
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length-1]);
 }
-// console.log(last(items,callback)) // gum
+last(items, (lastItem) => {
+  console.log(lastItem)
+})
+
+
+
+
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   let res = x+y;
   return cb(res);
 }
+sumNums(2,4, function (result){
+  console.log(result)
+})
+
 // console.log(sumNums(2,5,callback)) // 7
 
 
